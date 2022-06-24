@@ -2,6 +2,7 @@ import React from 'react'
 import Link from "next/link";
 import { FaAirbnb, FaSearch } from 'react-icons/fa'
 import { GrLanguage } from 'react-icons/gr'
+import { motion } from 'framer-motion';
 import {
     GlobalAltIcon,
     GlobeAltIcon,
@@ -11,7 +12,11 @@ import {
 } from '@heroicons/react/solid'
 const Header = () => {
     return (
-        <header className="transition-all duration-300 ease-linear sticky top-0 z-50 grid justify-evenly grid-cols-3 bg-white shadow-md p-5 md:px-10">
+        <motion.header
+        initial={{ opacity: 0,y:-100 }}
+        animate={{ opacity: 1,y:0 }}
+        transition={{ duration: 1, ease: [0.6, 0.05, -0.01, 0.9] }}
+         className="transition-all duration-300 ease-linear sticky top-0 z-50 grid justify-evenly grid-cols-3 bg-white shadow-md p-5 md:px-10">
             <div className="transition-all duration-300 ease-linear w-1/2 flex items-center justify-left">
                 <Link href="/">
                     <p className="ml-0 text-red-500 hover:text-red-700 duration-300 ease-linear hover:scale-105 flex font-semibold text-2xl mx-4 my-3 cursor-pointer">
@@ -34,7 +39,7 @@ const Header = () => {
                     <UserCircleIcon className="h-6 md:h-7" />
                 </div>
             </div>
-        </header>
+        </motion.header>
     )
 }
 
