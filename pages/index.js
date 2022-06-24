@@ -21,7 +21,7 @@ export default function Home({ exploreData, cardData }) {
   
   console.log(exploreData)
   return (
-    <div className="">
+    <div className="bg-gray-100">
       <Head>
         <title>Airbnb | Clone</title>
         <link rel="icon" href="/favicon.ico" />
@@ -33,8 +33,8 @@ export default function Home({ exploreData, cardData }) {
       <Header />
       <Banner />
 
-      <main className="max-w-7xl mx-auto px-8 sm:px-16">
-        <section className="pt-8">
+      <main className="max-w-6xl mx-auto px-8 sm:px-16 bg-white mt-8 mb-10 rounded-xl pb-3 shadow-md">
+        <section className=" bg-white mt-8 px-3 rounded-xl pb-3">
           <h2 className="text-2xl sm:text-2xl lg:text-4xl font-semibold pb-5 pt-6">Explore nearby</h2>
           {/* {data from server} */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 transition transform duration-300 ease-linear xl:grid-cols-4 mb-4 p-4">
@@ -45,7 +45,7 @@ export default function Home({ exploreData, cardData }) {
 
         </section>
 
-        <section>
+        <section className="bg-white mt-8rounded-xl pb-3 py-5 px-5 mt-5">
           <h2 className="text-2xl sm:text-2xl lg:text-4xl font-semibold pb-5 pt-6 py-8">Live anywhere</h2>
           <div id="container" className="flex space-x-3 overflow-x-scroll scrollbar-hide p-3 -ml-3 mb-3" onWheel={onWheel}>
             {cardData?.map((item, index) => (
