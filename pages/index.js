@@ -25,6 +25,10 @@ export default function Home({ exploreData, cardData }) {
       <Head>
         <title>Airbnb | Clone</title>
         <link rel="icon" href="/favicon.ico" />
+        {/* add description */}
+        <meta name="description" content="Airbnb Clone using Next JS Tailwind" />
+        {/* add keywords */}
+        <meta name="keywords" content="airbnb, clone, react, nextjs, javascript, html, css" />
       </Head>
       <Header />
       <Banner />
