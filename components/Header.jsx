@@ -7,7 +7,7 @@ import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import { DateRangePicker } from 'react-date-range';
 import {
-    GlobalAltIcon,
+    GlobalAltIcon,  
     GlobeAltIcon,
     MenuIcon,
     UserCircleIcon,
@@ -15,12 +15,14 @@ import {
     UsersIcon
 } from '@heroicons/react/solid'
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 const Header = () => {
 
     const [searchInput, setSearchInput] = useState('');
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
     const [numberOfGuests, setNumberOfGuests] = useState(1);
+    const Router = useRouter();
     const selectionRange = {
         startDate: startDate,
         endDate: endDate,
@@ -31,6 +33,20 @@ const Header = () => {
         setStartDate(ranges.selection.startDate);
         setEndDate(ranges.selection.endDate);
     }
+
+    const handleSearch = (e) => {
+        e.preventDefault();
+        Router.push({
+            pathname: '/search',
+            query: {
+                search: searchInput,
+                startDate: startDate,
+                endDate: endDate,
+                numberOfGuests: numberOfGuests
+            }
+        })
+    }
+    
 
     const handleCancel = () => {
         setSearchInput(null);
@@ -69,7 +85,7 @@ const Header = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, ease: [0.6, 0.05, -0.01, 0.9] }}
                     exit={{ opacity: 0, y: -50 }}
-                    
+
                     className="flex flex-col col-span-3 mx-auto rounded-xl">
                     <DateRangePicker
                         ranges={[selectionRange]}
@@ -83,9 +99,10 @@ const Header = () => {
                         <UserIcon className="h-5" />
                         <input value={numberOfGuests} min={1} onChange={(e) => setNumberOfGuests(e.target.value)} className="w-12 pl-2 text-lg outline-none text-red-400" type="number" />
                     </div>
-                    <div className="flex mt-5">
+                    <div className="flex mt-5
+                    ">
                         <button onClick={handleCancel} className=" text-gray-700 flex-grow">Cancel</button>
-                        <button onClick={handleCancel} className=" border-2 border-red-500 bg-red-500 text-white p-2 rounded-lg shadow-md hover:bg-white hover:text-red-500 hover:shadow-xl duration-300 ease transition-all hover:border-2 hover:border-red-400 flex-grow">Search</button>
+                        <button onClick={handleSearch} className=" border-2 border-red-500 bg-red-500 text-white p-2 rounded-lg shadow-md hover:bg-white hover:text-red-500 hover:shadow-xl duration-300 ease transition-all hover:border-2 hover:border-red-400 flex-grow" >Search</button>
                     </div>
                 </motion.div>
             )}
