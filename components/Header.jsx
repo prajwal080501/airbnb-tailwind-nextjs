@@ -19,7 +19,7 @@ const Header = () => {
          className="transition-all duration-300 ease-linear sticky top-0 z-50 grid justify-evenly grid-cols-3 bg-white shadow-md p-5 md:px-10">
             <div className="transition-all duration-300 ease-linear w-1/2 flex items-center justify-left">
                 <Link href="/">
-                    <p className="ml-0 text-red-500 hover:text-red-700 duration-300 ease-linear hover:scale-105 flex font-semibold text-2xl mx-4 my-3 cursor-pointer">
+                    <p className="ml-0 animate-bounce-slow text-red-500 hover:text-red-700 duration-300 ease-linear hover:scale-105 flex font-semibold text-2xl mx-4 my-3 cursor-pointer">
                         <span className=""><FaAirbnb className="sm:mr-5 text-red-500 mr-1 text-3xl" /></span>
                         airbnb
                     </p>

@@ -33,7 +33,7 @@ export default function Home({ exploreData, cardData }) {
       <Header />
       <Banner />
 
-      <main className="max-w-6xl mx-auto px-8 sm:px-16 bg-white mt-8 mb-10 rounded-xl pb-3 shadow-md">
+      <main className="max-w-6xl mx-auto px-8 sm:px-16 bg-white mt-8 mb-10 rounded-2xl pb-3 shadow-lg">
         <section className=" bg-white mt-8 px-3 rounded-xl pb-3">
           <h2 className="text-2xl sm:text-2xl lg:text-4xl font-semibold pb-5 pt-6">Explore nearby</h2>
           {/* {data from server} */}
