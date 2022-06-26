@@ -3,9 +3,9 @@ import Image from 'next/image'
 import { HeartIcon, StarIcon } from '@heroicons/react/outline'
 const InfoCard = ({ img, location, title, description, star, price, total }) => {
     return (
-        <div className="w-[100%] mb-3 py-7 px-2 bg-white flex  border-b cursor-pointer hover:opacity-80 hover:shadow-lg duration-300 transition-all transform ease-linear pr-4 rounded-lg first:border-t">
-            <div className='relative h-24 w-40 md:h-52 md:w-80 flex-shrink-0 transition-all duration-300 ease-linear'>
-                <Image className="h-full ml-2 rounded-lg shadow-lg" src={img} alt="img" layout='fill' objectFit='cover'></Image>
+        <div className="w-[100%] mb-3 py-7 px-2 bg-white md:flex  border-b cursor-pointer hover:opacity-80 hover:shadow-lg duration-300 transition-all transform ease-linear pr-4 rounded-lg first:border-t">
+            <div className='relative h-48 w-full ml-2 mb-3 md:mb-0  md:h-52 md:w-80 flex-shrink-0 transition-all duration-300 ease-linear'>
+                <Image className="h-full w-screen rounded-lg shadow-lg" src={img} alt="img" layout='fill' objectFit='cover'></Image>
             </div>
             <div className="flex flex-col flex-grow pl-5">
                 <div className="flex justify-between">
