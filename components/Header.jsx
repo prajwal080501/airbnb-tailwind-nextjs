@@ -73,8 +73,8 @@ const Header = ({placeholder}) => {
                     </p>
                 </Link>
             </div>
-            <div className="transition-all duration-300 ease-linear flex w-1/2 md:w-full  h-full lg:border-2 border-gray-200 rounded-3xl md:border-2  cursor-pointer items-center align-middle md:shadow-sm px-2 justify-between hover:border-4 hover:border-red-400 hover:shadow-xl">
-                <input value={searchInput} onChange={(e) => setSearchInput(e.target.value)} type="text" className=" flex-grow pl-2 outline-none" placeholder={placeholder || "Search places" }/>
+            <div className="transition-all duration-300 ease-linear flex w-1/2 md:w-full  h-full lg:border-2 border-gray-200 rounded-3xl md:border-2  cursor-pointer items-center align-middle md:shadow-sm px-2 justify-between lg:hover:border-4 lg:hover:border-red-400 lg:hover:shadow-xl">
+                <input value={searchInput} onChange={(e) => setSearchInput(e.target.value)} type="text" className=" flex-grow pl-2 outline-none overflow-x-scroll duration-200 ease transform transition-all" placeholder={placeholder || "Search places" }/>
                 <svg xmlns="http://www.w3.org/2000/svg" className=" hidden md:inline-flex h-9 w-9 bg-red-500 text-2xl text-white p-2 rounded-full  md:mx-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
