@@ -100,7 +100,9 @@ const Header = ({placeholder}) => {
                         minDate={new Date()}
                         rangeColors={['#fd5b61']}
                         onChange={handleSelect}
-                        className="pt-5 lg:shadow-xl w-1/2 lg:mx-auto  rounded-xl lg:border-2  pb-3 mb-5 z-100"
+                        calenderHeight={350}
+                        calendarWidth={350}
+                        className="pt-5 lg:shadow-xl w-max-[300px] xs:flex lg:mx-auto  rounded-xl lg:border-2  pb-3 mb-5 -z-1"
                     />
                     <div className="flex items-center border-b mb-4">
                         <h2 className="text-2xl font-semibold flex-grow">Number of Guests</h2>

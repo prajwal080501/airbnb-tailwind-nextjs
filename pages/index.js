@@ -45,9 +45,9 @@ export default function Home({ exploreData, cardData }) {
 
         </section>
 
-        <section className="bg-white mt-8rounded-xl pb-3 py-5 px-5 mt-5">
+        <section className="w-full bg-white rounded-xl pb-3 py-5 px-5 mt-5">
           <h2 className="text-2xl sm:text-2xl lg:text-4xl font-semibold pb-5 pt-6 py-8">Live anywhere</h2>
-          <div id="container" className="flex space-x-3 overflow-x-scroll scrollbar-hide p-3 -ml-3 mb-3" onWheel={onWheel}>
+          <div id="container" className="flex space-x-3 overflow-x-scroll scrollbar-hide p-3 mb-3" onWheel={onWheel}>
             {cardData?.map((item, index) => (
               <MediumCard key={item.img} img={item.img} title={item.title} />
             ))}
