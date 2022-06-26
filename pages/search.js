@@ -2,11 +2,11 @@ import React from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { motion } from 'framer-motion'
-import { useRouter } from 'next/router'
+import {useRouter} from 'next/router'
 import { compareAsc, format } from 'date-fns';
 import { parseISO } from 'date-fns'
 import InfoCard from '../components/InfoCard'
-const search = ({ searchResults }) => {
+export const Search = ({ searchResults }) => {
     // es6 desctructuring
     const Router = useRouter();
     console.log(searchResults)
@@ -24,7 +24,7 @@ const search = ({ searchResults }) => {
                     initial={{ opacity: 0, y: -100 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, ease: [0.6, 0.05, -0.01, 0.9] }}
-                    className="mt-3 px-5 flex-grow pt-4 px-6">
+                    className="mt-3  flex-grow pt-4 px-6">
                     <p className='text-xs'>300+ stays-{checkInDate} - {checkOutDate} - for {guests} guests</p>
                     <h1 className="text-3xl font-semibold mt-2 mb-6">Stays in {location}</h1>
                     <div className="hidden lg:inline-flex mb-4 space-x-3 ml-3">
@@ -49,7 +49,7 @@ const search = ({ searchResults }) => {
     )
 }
 
-export default search
+export default Search
 
 
 export async function getServerSideProps(context) {
