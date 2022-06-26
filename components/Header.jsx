@@ -6,8 +6,9 @@ import { motion } from 'framer-motion';
 import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import { DateRangePicker } from 'react-date-range';
+Date
 import {
-    GlobalAltIcon,  
+    GlobalAltIcon,
     GlobeAltIcon,
     MenuIcon,
     UserCircleIcon,
@@ -16,17 +17,22 @@ import {
 } from '@heroicons/react/solid'
 import { useState } from 'react';
 import { useRouter } from 'next/router';
-const Header = () => {
-
+const Header = ({placeholder}) => {
     const [searchInput, setSearchInput] = useState('');
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
     const [numberOfGuests, setNumberOfGuests] = useState(1);
+    const options = { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' };
     const Router = useRouter();
     const selectionRange = {
         startDate: startDate,
         endDate: endDate,
         key: 'selection'
+    }
+
+    const closeDatePicker = () => {
+        setStartDate(new Date());
+        setEndDate(new Date());
     }
 
     const handleSelect = (ranges) => {
@@ -37,16 +43,17 @@ const Header = () => {
     const handleSearch = (e) => {
         e.preventDefault();
         Router.push({
-            pathname: '/search',
+            pathname: "/search",
             query: {
-                search: searchInput,
-                startDate: startDate,
-                endDate: endDate,
-                numberOfGuests: numberOfGuests
-            }
-        })
-    }
-    
+                location: searchInput,
+                checkInDate:startDate.toLocaleDateString('en-US', options),
+                checkOutDate: endDate.toLocaleDateString('en-US', options),
+                guests: numberOfGuests
+            },
+        });
+        setTimeout(() => closeDatePicker(), 100);
+    };
+
 
     const handleCancel = () => {
         setSearchInput(null);
@@ -62,11 +69,12 @@ const Header = () => {
                     <p className="ml-0 animate-bounce-slow text-red-500 hover:text-red-700 duration-300 ease-linear hover:scale-105 flex font-semibold text-2xl mx-4 my-3 cursor-pointer">
                         <span className=""><FaAirbnb className="sm:mr-5 text-red-500 mr-1 text-3xl" /></span>
                         airbnb
+
                     </p>
                 </Link>
             </div>
             <div className="transition-all duration-300 ease-linear flex w-1/2 md:w-full  h-full lg:border-2 border-gray-200 rounded-3xl md:border-2  cursor-pointer items-center align-middle md:shadow-sm px-2 justify-between hover:border-4 hover:border-red-400 hover:shadow-xl">
-                <input value={searchInput} onChange={(e) => setSearchInput(e.target.value)} type="text" className=" flex-grow pl-2 outline-none" placeholder="Search places    " />
+                <input value={searchInput} onChange={(e) => setSearchInput(e.target.value)} type="text" className=" flex-grow pl-2 outline-none" placeholder={placeholder || "Search places" }/>
                 <svg xmlns="http://www.w3.org/2000/svg" className=" hidden md:inline-flex h-9 w-9 bg-red-500 text-2xl text-white p-2 rounded-full  md:mx-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
