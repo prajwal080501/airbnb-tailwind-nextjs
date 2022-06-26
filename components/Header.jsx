@@ -94,13 +94,13 @@ const Header = ({placeholder}) => {
                     transition={{ duration: 1, ease: [0.6, 0.05, -0.01, 0.9] }}
                     exit={{ opacity: 0, y: -50 }}
 
-                    className="flex flex-col col-span-3 mx-auto rounded-xl relative z-10">
+                    className="flex w-[90vw] flex-col col-span-3 mx-auto rounded-xl relative z-10">
                     <DateRangePicker
                         ranges={[selectionRange]}
                         minDate={new Date()}
                         rangeColors={['#fd5b61']}
                         onChange={handleSelect}
-                        className="pt-5 shadow-xl rounded-xl pb-3 mb-5 z-100"
+                        className="pt-5 lg:shadow-xl w-1/2 lg:mx-auto  rounded-xl lg:border-2  pb-3 mb-5 z-100"
                     />
                     <div className="flex items-center border-b mb-4">
                         <h2 className="text-2xl font-semibold flex-grow">Number of Guests</h2>
