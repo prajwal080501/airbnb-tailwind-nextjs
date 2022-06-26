@@ -94,7 +94,7 @@ const Header = ({placeholder}) => {
                     transition={{ duration: 1, ease: [0.6, 0.05, -0.01, 0.9] }}
                     exit={{ opacity: 0, y: -50 }}
 
-                    className="flex flex-col col-span-3 mx-auto rounded-xl">
+                    className="flex flex-col col-span-3 mx-auto rounded-xl relative z-10">
                     <DateRangePicker
                         ranges={[selectionRange]}
                         minDate={new Date()}
