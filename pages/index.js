@@ -45,7 +45,7 @@ export default function Home({ exploreData, cardData, darkMode, setDarkMode, han
       />
       <Banner />
 
-      <main className={darkMode ? ' max-w-7xl mx-auto px-8 sm:px-16 bg-gray-800 text-white mt-8 mb-10 rounded-2xl pb-3 shadow-lg' : 'max-w-6xl mx-auto px-8 sm:px-16 bg-white mt-8 mb-10 rounded-2xl pb-3 shadow-lg'}>
+      <main className={darkMode ? ' max-w-6xl mx-auto px-8 sm:px-16 bg-gray-800 text-white mt-8 mb-10 rounded-2xl pb-3 shadow-lg' : 'max-w-6xl mx-auto px-8 sm:px-16 bg-white mt-8 mb-10 rounded-2xl pb-3 shadow-lg'}>
         <section className={darkMode ? 'bg-gray-800 mt-8 px-3 rounded-xl pb-3' : 'bg-white mt-8 px-3 rounded-xl pb-3'}>
           <h2 className="text-2xl sm:text-2xl lg:text-4xl font-semibold pb-5 pt-6">
             Explore nearby
