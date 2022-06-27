@@ -15,6 +15,7 @@ import {
   UserCircleIcon,
   UserIcon,
   UsersIcon,
+  MoonIcon
 } from "@heroicons/react/solid";
 import { useState } from "react";
 import { useRouter } from "next/router";
@@ -104,13 +105,12 @@ const Header = ({ placeholder, darkMode, setDarkMode, handleDarkMode }) => {
         </svg>
       </div>
       <div className="transition-all duration-300 ease-linear flex items-center align-middle space-x-4 justify-end text-gray-500">
-        <button onClick={handleDarkMode} className="flex items-center">
-          <SunIcon className="h-6 hover:text-red-400 hover:scale-110 duration-300 ease transform transition-all" />{" "}
-          {/* {darkMode ? (
-            <span className="text-white text-xs">Turn on light mode</span>
-          ) : (
-            <span className="text-gray-700 text-xs">Turn on dark mode</span>
-          )} */}
+        <button onClick={handleDarkMode} className="flex items-center transition-all duration-300 ease-linear">
+          {
+            darkMode ? 
+            <SunIcon className="text-gray-100 h-6 hover:text-red-400 transition-all duration-300 ease" /> :
+            <MoonIcon className="text-gray-500 h-6 hover:text-red-400 transition-all duration-300 ease" />
+          }
         </button>
         <p
           className={
