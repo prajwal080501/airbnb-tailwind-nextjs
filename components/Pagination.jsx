@@ -2,7 +2,7 @@ import { ArrowCircleLeftIcon } from '@heroicons/react/outline'
 import { ArrowCircleRightIcon } from '@heroicons/react/outline'
 import React from 'react'
 
-const Pagination = () => {
+const Pagination = ({darkMode}) => {
   return (
     <div className="flex w-full items-center justify-center p-5 space-x-8">
         <ArrowCircleLeftIcon className="h-12 w-12 text-red-500 hover:scale-110 duration-300 transition-all transform ease cursor-pointer"/>

@@ -8,12 +8,8 @@ import LargeCard from "../components/LargeCard";
 import MediumCard from "../components/MediumCard";
 import SmallCard from "../components/SmallCard";
 
-export default function Home({ exploreData, cardData }) {
-  const [darkMode, setDarkMode] = useState("false");
+export default function Home({ exploreData, cardData, darkMode, setDarkMode, handleDarkMode }) {
 
-  const handleDarkMode = () => {
-    setDarkMode(!darkMode);
-  };
   const onWheel = (e) => {
     e.preventDefault();
     const container = document.getElementById("container");
@@ -26,7 +22,6 @@ export default function Home({ exploreData, cardData }) {
     });
   };
 
-  console.log(exploreData);
   return (
     <div className={darkMode ? 'bg-gray-800' : 'bg-gray-100'}>
       <Head>

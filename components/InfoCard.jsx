@@ -1,9 +1,9 @@
 import React from 'react'
 import Image from 'next/image'
 import { HeartIcon, StarIcon } from '@heroicons/react/outline'
-const InfoCard = ({ img, location, title, description, star, price, total }) => {
+const InfoCard = ({ img, location, title, description, star, price, total, darkMode }) => {
     return (
-        <div className="w-[100%] mb-3 py-7 px-2 bg-white md:flex  border-b cursor-pointer hover:opacity-80 hover:shadow-lg duration-300 transition-all transform ease-linear pr-4 rounded-lg first:border-t">
+        <div className={darkMode ? 'w-[100%] mb-3 py-7 px-2 bg-gary-800 md:flex cursor-pointer hover:opacity-80 hover:shadow-lg hover:bg-gray-900 duration-300 transition-all transform ease-linear pr-4 rounded-lg first:border-t border-gray-900 text-gray-100' : 'w-[100%] mb-3 py-7 px-2 bg-white md:flex  border-b cursor-pointer hover:opacity-80 hover:shadow-lg duration-300 transition-all transform ease-linear pr-4 rounded-lg first:border-t'}>
             <div className='relative h-48 w-full ml-2 mb-3 md:mb-0  md:h-52 md:w-80 flex-shrink-0 transition-all duration-300 ease-linear'>
                 <Image className="h-full w-screen rounded-lg shadow-lg" src={img} alt="img" layout='fill' objectFit='cover'></Image>
             </div>

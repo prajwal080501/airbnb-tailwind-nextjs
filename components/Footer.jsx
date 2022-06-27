@@ -8,7 +8,7 @@ const Footer = ({darkMode, setDarkMode}) => {
             initial={{ opacity: 0, y: -100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: [0.6, 0.05, -0.01, 0.9] }}
-            className={darkMode? 'max-w-screen rounded-xl shadow-lg pt-8 pb-5 mx-auto bg-gray-800 transition-all duration-300 ease grid grid-cols-2 place-items-center space-y-4 md:space-y-0 lg:grid-cols-3 xl:grid-cols-4' : 'max-w-screen rounded-xl shadow-lg pt-8 pb-5 mx-auto bg-gray-300 grid grid-cols-2 place-items-center space-y-4 md:space-y-0 lg:grid-cols-3 xl:grid-cols-4'}>
+            className={darkMode? 'max-w-screen rounded-xl shadow-lg pt-8 pb-5 mx-auto bg-gray-900 transition-all duration-300 ease grid grid-cols-2 place-items-center space-y-4 md:space-y-0 lg:grid-cols-3 xl:grid-cols-4' : 'max-w-screen rounded-xl shadow-lg pt-8 pb-5 mx-auto bg-gray-300 grid grid-cols-2 place-items-center space-y-4 md:space-y-0 lg:grid-cols-3 xl:grid-cols-4'}>
 
             <div className={darkMode ? 'footer-menu-dark' : 'footer-menu-light'}>
                 <h5 className="font-bold">Support</h5>

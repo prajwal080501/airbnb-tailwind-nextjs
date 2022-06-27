@@ -6,6 +6,9 @@
   .button {
     @apply px-4 py-2 border bg-white rounded-full cursor-pointer hover:shadow-lg active:scale-95 active:bg-gray-100 transition transform duration-100 ease-out;
   }
+  .button-dark {
+    @apply px-4 py-2  bg-gray-900 text-gray-200 rounded-full cursor-pointer hover:shadow-lg active:scale-95 active:bg-red-400 transition transform duration-300 ease-out;
+  }
   .navbar-light {
     @apply transition-all duration-300 ease-linear sticky top-0 z-50 grid justify-evenly grid-cols-3 bg-white shadow-md p-5 md:px-10;
   }
