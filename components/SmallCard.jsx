@@ -1,8 +1,8 @@
 import React from 'react'
 import Image from 'next/image'
-const SmallCard = ({img,location,distance}) => {
+const SmallCard = ({img,location,distance, darkMode, setDarkMode}) => {
   return (
-    <div className="flex items-center m-2 mt-5 space-x-4 rounded-xl cursor-pointer hover:bg-gray-100 hover:scale-105 transition-all transform duration-200 ease-out">
+    <div className={darkMode ? 'flex items-center m-2 mt-5 space-x-4 rounded-xl cursor-pointer hover:bg-gray-900 hover:scale-105 transition-all transform duration-200 ease-out' : 'flex items-center m-2 mt-5 space-x-4 rounded-xl cursor-pointer hover:bg-gray-200 hover:scale-105 transition-all transform duration-200 ease-out'}>
         <div className="relative h-16 w-16">
         <Image className="rounded-lg" src={img} layout='fill' objectFit='cover' alt='image'/>
         </div>

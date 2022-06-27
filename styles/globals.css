@@ -1,18 +1,27 @@
-    
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer components {
-    .button {
-        @apply px-4 py-2 border bg-white rounded-full cursor-pointer hover:shadow-lg active:scale-95 active:bg-gray-100 transition transform duration-100 ease-out
-    }
+  .button {
+    @apply px-4 py-2 border bg-white rounded-full cursor-pointer hover:shadow-lg active:scale-95 active:bg-gray-100 transition transform duration-100 ease-out;
+  }
+  .navbar-light {
+    @apply transition-all duration-300 ease-linear sticky top-0 z-50 grid justify-evenly grid-cols-3 bg-white shadow-md p-5 md:px-10;
+  }
+  .navbar-dark {
+    @apply transition-all duration-300 ease-linear text-gray-500 sticky top-0 z-50 grid justify-evenly grid-cols-3 bg-gray-800 shadow-md p-5 md:px-10
+  }
+  .footer-menu-light {
+    @apply space-y-4 text-xs text-gray-800
+  }
+  .footer-menu-dark {
+    @apply space-y-4 text-xs text-gray-200
+  }
 }
 
-
 * {
-    font-family: 'Roboto', sans-serif;
-    scroll-behavior: smooth;
-    scroll-snap-type: mandatory;
-
+  font-family: "Roboto", sans-serif;
+  scroll-behavior: smooth;
+  scroll-snap-type: mandatory;
 }
